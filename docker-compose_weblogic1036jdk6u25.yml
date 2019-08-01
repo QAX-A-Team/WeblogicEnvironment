@@ -1,0 +1,17 @@
+version: '3'
+services:
+ weblogic:
+   build:
+    context: .
+    args:
+      JDK_PKG: jdk-6u25-linux-x64.bin
+      WEBLOGIC_JAR: wls1036_generic.jar
+   ports:
+    - "7001:7001"
+    - "8453:8453"
+    - "5556:5556"
+   volumes:
+    - ./temp:/u01/temp
+      # - ./middleware/modules:/u01/app/oracle/middleware/modules
+      # - ./middleware/wlserver:/u01/app/oracle/middleware/wlserver
+  
