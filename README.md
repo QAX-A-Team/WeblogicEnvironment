@@ -48,6 +48,8 @@ docker build --build-arg JDK_PKG=jdk-7u21-linux-x64.tar.gz --build-arg WEBLOGIC_
 docker run -d -p 7001:7001 -p 8453:8453 -p 5556:5556 --name weblogic12013jdk7u21 weblogic12013jdk7u21
 ```
 
+运行后可访问`http://localhost:7001/console/login/LoginForm.jsp`登录到Weblogic Server管理控制台，默认用户名为`weblogic`,默认密码为`qaxateam01`
+
 ### 远程调试
 
 如需远程调试，需使用`docker cp`将远程调试需要的目录从已运行的容器复制到本机。
