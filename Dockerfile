@@ -3,6 +3,9 @@ FROM centos
 # 参数
 ARG JDK_PKG
 ARG WEBLOGIC_JAR
+# 解决libnsl包丢失的问题
+RUN yum -y install libnsl
+
 # 创建用户
 RUN groupadd -g 1000 oinstall && useradd -u 1100 -g oinstall oracle
 # 创建需要的文件夹和环境变量

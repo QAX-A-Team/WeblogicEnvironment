@@ -1,0 +1,17 @@
+version: '3'
+services:
+ weblogic:
+   build:
+    context: .
+    args:
+      JDK_PKG: jdk-8u121-linux-x64.tar.gz
+      WEBLOGIC_JAR: fmw_12.2.1.0.0_wls.jar
+   ports:
+    - "7001:7001"
+    - "8453:8453"
+    - "5556:5556"
+   volumes:
+    - ./temp:/u01/temp
+      # - ./middleware/modules:/u01/app/oracle/middleware/modules
+      # - ./middleware/wlserver:/u01/app/oracle/middleware/wlserver
+  
